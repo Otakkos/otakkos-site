@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://otakkosci.com/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://otakkosci.com/a-propos.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://otakkosci.com/menu.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://otakkosci.com/restaurants.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://otakkosci.com/carrieres.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://otakkosci.com/contact.html</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>
