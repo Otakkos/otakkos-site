@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin - O'Takkos</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=19" />
+  </head>
+  <body class="admin-body">
+    <main class="admin-shell">
+      <section class="admin-login" id="admin-login">
+        <div>
+          <span class="section-kicker">Espace client</span>
+          <h1>Administration O'Takkos</h1>
+          <p>Connectez-vous pour gérer les contenus dynamiques du site.</p>
+        </div>
+        <form id="login-form" class="admin-card">
+          <label>
+            Nom d'utilisateur
+            <input type="text" name="username" value="admin" autocomplete="username" required />
+          </label>
+          <label>
+            Mot de passe
+            <input type="password" name="password" value="admin" autocomplete="current-password" required />
+          </label>
+          <button class="btn primary" type="submit">Se connecter</button>
+          <p class="admin-feedback" id="login-feedback"></p>
+        </form>
+      </section>
+
+      <section class="admin-panel is-hidden" id="admin-panel">
+        <header class="admin-header">
+          <div>
+            <span class="section-kicker">Dashboard</span>
+            <h1>Tableau de bord</h1>
+          </div>
+          <div class="admin-actions">
+            <a class="btn secondary" href="index.html">Voir le site</a>
+            <button class="btn primary" id="logout-button" type="button">Déconnexion</button>
+          </div>
+        </header>
+
+        <section class="admin-grid stats-grid">
+          <article class="admin-stat">
+            <span>Visites</span>
+            <strong id="stat-visits">0</strong>
+          </article>
+          <article class="admin-stat">
+            <span>Interactions</span>
+            <strong id="stat-interactions">0</strong>
+          </article>
+          <article class="admin-stat wide">
+            <span>Boutons les plus sélectionnés</span>
+            <div id="top-buttons" class="admin-list compact"></div>
+          </article>
+        </section>
+
+        <section class="admin-grid">
+          <form class="admin-card" id="contact-form">
+            <span class="section-kicker">Coordonnées</span>
+            <h2>Contact et WhatsApp</h2>
+            <label>
+              Numéro affiché
+              <input name="phoneDisplay" type="text" required />
+            </label>
+            <label>
+              Email affiché
+              <input name="email" type="email" required />
+            </label>
+            <label>
+              Numéro WhatsApp des boutons Commander
+              <input name="whatsappNumber" type="text" required />
+            </label>
+            <button class="btn primary" type="submit">Mettre à jour</button>
+          </form>
+
+          <form class="admin-card" id="password-form">
+            <span class="section-kicker">Sécurité</span>
+            <h2>Changer le mot de passe</h2>
+            <label>
+              Nouveau mot de passe
+              <input name="newPassword" type="password" required minlength="4" />
+            </label>
+            <button class="btn primary" type="submit">Changer</button>
+            <p class="admin-feedback">Identifiant actuel : admin</p>
+          </form>
+        </section>
+
+        <section class="admin-grid">
+          <form class="admin-card" id="job-form">
+            <span class="section-kicker">Carrières</span>
+            <h2>Ajouter une offre d'emploi</h2>
+            <label>
+              Intitulé du poste
+              <input name="title" type="text" placeholder="Ex : Caissier polyvalent" required />
+            </label>
+            <label>
+              Lieu
+              <input name="location" type="text" placeholder="Ex : Yopougon" />
+            </label>
+            <label>
+              Description
+              <textarea name="description" rows="5" required></textarea>
+            </label>
+            <button class="btn primary" type="submit">Publier l'offre</button>
+          </form>
+
+          <article class="admin-card">
+            <span class="section-kicker">Offres publiées</span>
+            <h2>Page Carrières</h2>
+            <div id="jobs-list" class="admin-list"></div>
+            <button class="btn secondary" id="clear-jobs" type="button">Retirer les offres</button>
+          </article>
+        </section>
+
+        <section class="admin-grid">
+          <form class="admin-card" id="menu-form">
+            <span class="section-kicker">Menu</span>
+            <h2>Remplacer le menu</h2>
+            <label>
+              Nouveau menu image ou PDF
+              <input name="menuFile" type="file" accept="image/*,.pdf" required />
+            </label>
+            <button class="btn primary" type="submit">Charger le menu</button>
+          </form>
+
+          <article class="admin-card">
+            <span class="section-kicker">Menu actuel</span>
+            <h2 id="menu-current">Menu officiel</h2>
+            <p>Le fichier chargé remplacera l'affichage de la page Menu sans changer sa structure.</p>
+            <button class="btn secondary" id="reset-menu" type="button">Revenir au menu initial</button>
+          </article>
+        </section>
+
+        <section class="admin-grid">
+          <form class="admin-card" id="restaurant-form">
+            <span class="section-kicker">Restaurants</span>
+            <h2>Ajouter un restaurant</h2>
+            <label>
+              Nom du restaurant
+              <input name="name" type="text" placeholder="Ex : O'Takkos Cocody" required />
+            </label>
+            <label>
+              Quartier
+              <input name="area" type="text" placeholder="Ex : Cocody" required />
+            </label>
+            <label>
+              Adresse / indication
+              <textarea name="address" rows="4" required></textarea>
+            </label>
+            <label>
+              Image du restaurant
+              <input name="image" type="file" accept="image/*" />
+            </label>
+            <button class="btn primary" type="submit">Ajouter le restaurant</button>
+          </form>
+
+          <article class="admin-card">
+            <span class="section-kicker">Ajouts</span>
+            <h2>Nouveaux restaurants</h2>
+            <div id="restaurants-list" class="admin-list"></div>
+            <button class="btn secondary" id="clear-restaurants" type="button">Retirer les ajouts</button>
+          </article>
+        </section>
+
+        <p class="admin-note">
+          Version connectée : les changements enregistrés ici sont synchronisés avec Supabase et se répercutent sur le site
+          en ligne.
+        </p>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>
