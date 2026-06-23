@@ -24,4 +24,8 @@
     <loc>https://otakkosci.com/contact.html</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://otakkosci.com/fondation.html</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>
